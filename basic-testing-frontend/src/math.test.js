@@ -13,3 +13,9 @@ it('it should summarize all number values in an array', () => {
     //Assert
     expect(result).toBe(expectedResult);
 });
+it('should throw an error if no value is passed into the function', () => {
+    const resultFn = () => {
+        add();
+    };
+    expect(resultFn).toThrow();
+})
