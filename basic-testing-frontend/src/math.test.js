@@ -1,4 +1,4 @@
-import {it, expect} from 'vitest';
+import {it, expect, describe} from 'vitest';
 
 import {add} from './math';
 
@@ -13,20 +13,24 @@ it('it should summarize all number values in an array', () => {
     //Assert
     expect(result).toBe(expectedResult);
 });
-it('should throw an error if no value is passed into the function', () => {
-    const resultFn = () => {
-        add();
-    };
-    expect(resultFn).toThrow();
-})
 
-it('should throw an error if provided with multiple arguments instead of an array', () => {
-    const num1 = 1;
-    const num2 = 2;
 
-    const resultFn = () => {
-        add(num1, num2);
-    };
-
-    expect(resultFn).toThrow();
+describe("negative tests", () => {
+    it('should throw an error if no value is passed into the function', () => {
+        const resultFn = () => {
+            add();
+        };
+        expect(resultFn).toThrow();
+    })
+    
+    it('should throw an error if provided with multiple arguments instead of an array', () => {
+        const num1 = 1;
+        const num2 = 2;
+    
+        const resultFn = () => {
+            add(num1, num2);
+        };
+    
+        expect(resultFn).toThrow();
+    });
 })
